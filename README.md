@@ -45,7 +45,7 @@ ERROR: Function values at 2 and 3 have the same sign
 
 The function `bisection_solve` takes three optional named arguments:
 * `max_steps` controls the maximum number of iterations of the bisection algorithm. The number of function calls is at most `max_steps+2`.
-* `tol` controls how desired closeness to zero for the function value. The algorithm stops when `f(x) <= tol`. However, it never does more than `max_steps` iterations.
+* `tol` controls the desired closeness to zero for the function value. The algorithm stops when `f(x) <= tol`. However, it never does more than `max_steps` iterations.
 * `scaled` controls the way in which a new point between `a` and `b` is selected at each stage. When `scaled` is `false ` (the default) the midpoint is selected. When `scaled` is `true` we select a point `m` so that the segment from `(a,f(a))` to `(b,f(b))` passes through `(m,0)`. This may give better resutls.
 
 ```
