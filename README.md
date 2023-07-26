@@ -6,7 +6,7 @@ Solve equations by the bisection method.
 
 To solve an equation of the form `f(x) == 0` we call `bisection_solve(f,a,b)`
 where `a` and `b` are either scalars or vectors such that `f(a)` and `f(b)`
-have opposite signs.
+have opposite signs. It is vital that `f` be a real-valued continuous function.
 
 ```
 julia> f(x) = x^2-2
@@ -30,6 +30,19 @@ julia> f(ans)
 4.852249730902258e-7
 ```
 
+The arguments to the function may be complex:
+```
+julia> f(x) = x * x' - 2
+f (generic function with 1 method)
+
+julia> bisection_solve(f, 0im, 2im-3)
+-1.176696538925171 + 0.7844643592834473im
+
+julia> f(ans)
+-9.242955343324866e-7 + 0.0im
+```
+
+### Opposite sign requirement
 The initial values `a` and `b` must give function values with opposite signs or
 an error is thrown.
 
