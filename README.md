@@ -49,6 +49,9 @@ The function `bisection_solve` takes three optional named arguments:
 * `scaled` controls the way in which a new point between `a` and `b` is selected at each stage. When `scaled` is `false ` (the default) the midpoint is selected. When `scaled` is `true` we select a point `m` so that the segment from `(a,f(a))` to `(b,f(b))` passes through `(m,0)`. This may give better resutls.
 
 ```
+julia> f(x) = x^2-2
+f (generic function with 1 method)
+
 julia> bisection_solve(f,1,2,max_steps=5)
 1.40625
 
