@@ -8,7 +8,7 @@ export bisection_solve
 Return the midpoint between `a` and `b`.
 """
 function _true_mid_point(a, b)
-    return 0.5 * (a + b)
+    return  (a + b) / 2
 end
 
 
